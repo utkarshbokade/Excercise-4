@@ -1,0 +1,64 @@
+#reghead{
+    color: #b38449;
+    background-color: #ede1d3;
+    font-size: 70px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.register{
+    background-color: #fbf9f6;
+    text-align: center;
+    font-family:cursive;
+}
+
+#ration{
+    color: #3f2e19;
+}
+
+#name{
+    width: 42%;
+    height: 25px;
+}
+
+#username{
+    width: 40%;
+    height: 25px;
+}
+
+#email{
+    width: 42.5%;
+    height: 25px;
+}
+
+#password{
+    width: 41%;
+    height: 25px;
+}
+
+#confirmpassword{
+    width: 37%;
+    height: 25px;
+}
+
+#login{
+    padding: 10px;
+    width: 8%;
+    font-size: larger;
+    text-decoration: none;
+    font-family: cursive;
+    border: 2px solid #3f2e19;
+    border-radius: 50px;
+    color: #3f2e19;
+    background-color: #ede1d3;
+}
+
+#reg{
+    text-decoration: none;
+    color: #3f2e19;
+    background-color: #ede1d3;
+    font-size: larger;
+    padding: 15px;
+    border: 2px solid #3f2e19;
+    border-radius: 50px;
+}
