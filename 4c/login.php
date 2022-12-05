@@ -7,24 +7,32 @@ if (isset($_POST["submit"])) {
     $usernameemail = $_POST["usernameemail"];
     $password = $_POST["password"];
     $result = mysqli_query($conn, "SELECT * FROM tb_user WHERE username = '$usernameemail' OR email = '$usernameemail'");
-
-    if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $verify = password_verify($password, $row['password']);
-        if ($verify == 1) {
-            $_SESSION["login"] = true;
-            $_SESSION["id"] = $row["id"];
-            header("location: index.php");
-        } else {
+    $row = mysqli_fetch_assoc($result);
+    
+    if (password_verify($password, $row["password"])) {
+        $_SESSION["login"] = true;
+        $_SESSION["id"] = $row["id"];
+        header("location: index.php");
+    }else{
             header("location: error.php");
-            //echo
-            //"<script> alert('Incorrect Password'); </script>";
         }
-    } else {
-        header("location: error2.php");
-        //echo
-        //"<script> alert('User not registered'); </script>";
-    }
+//     if (mysqli_num_rows($result) > 0) {
+//         $row = mysqli_fetch_assoc($result);
+//         $verify = password_verify($password, $row['password']);
+//         if ($verify == 1) {
+//             $_SESSION["login"] = true;
+//             $_SESSION["id"] = $row["id"];
+//             header("location: index.php");
+//         } else {
+//             header("location: error.php");
+//             //echo
+//             //"<script> alert('Incorrect Password'); </script>";
+//         }
+//     } else {
+//         header("location: error2.php");
+//         //echo
+//         //"<script> alert('User not registered'); </script>";
+//     }
 }
 ?>
 <!DOCTYPE html>
